@@ -16,7 +16,8 @@
 				<template slot="body" slot-scope="{ items }">
 					<tr v-for="item in items">
 						<td v-for="item in item">
-							<pretty-print :data="item.value"></pretty-print>
+							<pretty-print :data="item.value" v-if="typeof item.value != 'string'"></pretty-print>
+							<shortened-text :full="item.value" v-if="typeof item.value == 'string'">{{ item.value.length > 40 ? item.value.substring(0,40) + ' [...]' : item.value}}</shortened-text>
 						</td>
 					</tr>
 				</template>
@@ -28,12 +29,13 @@
 <script>
 import DetailsTable from '../UI/DetailsTable'
 import PrettyPrint from '../UI/PrettyPrint'
+import ShortenedText from '../UI/ShortenedText'
 
 import Filter from '../../features/filter'
 
 export default {
 	name: 'UserTab',
-	components: { DetailsTable, PrettyPrint },
+	components: { DetailsTable, PrettyPrint, ShortenedText },
 	props: [ 'active', 'userTab' ],
 	// computed: {
 	// 	filters() {

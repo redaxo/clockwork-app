@@ -1,7 +1,7 @@
 <template>
 	<span @click="expand($event)">
 		<template v-if="expanded">
-			{{full}}
+			<pretty-print :data="full"></pretty-print>
 		</template>
 		<template v-else>
 			<slot></slot>
@@ -10,8 +10,11 @@
 </template>
 
 <script>
+import PrettyPrint from './PrettyPrint'
+
 export default {
 	name: 'ShortenedText',
+	components: { PrettyPrint },
 	props: [ 'full' ],
 	data: () => ({
 		expanded: false

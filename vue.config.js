@@ -1,6 +1,7 @@
+const {existsSync} = require('fs');
 const {vue} = require('./package.json');
 
 module.exports = {
     ...vue,
-    ...require('./vue.config.local.js')
+    ...existsSync('./vue.config.local.js') ? require('./vue.config.local.js') : {}
 }

@@ -76,7 +76,7 @@ export default {
 	props: { name: {}, items: {}, tags: { default: () => [] } },
 	data: () => ({
 		view: 'chart',
-		hiddenTags: [],
+		hiddenTags: ['events'],
 
 		filter: new Filter([
 			{ tag: 'duration', type: 'number' }

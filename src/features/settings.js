@@ -57,7 +57,7 @@ export default class Settings
 				hideCommandTypeRequests: this.platform instanceof Extension,
 				hideQueueJobTypeRequests: this.platform instanceof Extension,
 				hideTestTypeRequests: this.platform instanceof Extension,
-				timelineHiddenTags: {},
+				timelineHiddenTags: {performance:["events"]},
 				seenReleaseNotesVersion: null
 			},
 			site: {

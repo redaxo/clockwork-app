@@ -1,18 +1,18 @@
 export default class UpdateNotification
 {
-	constructor(store) {
-		this.store = store
+	constructor(settings) {
+		this.settings = settings
 
 		this.serverVersion = null
 	}
 
 	get ignoredUpdates() {
-		return this.store.get('update-notification.ignored-updates') || {}
+		return this.settings.global.ignoredUpdateNotifications || {}
 	}
 
 	latest() {
 		return {
-			version: '4.1.0',
+			version: '4.1.2',
 			url: 'https://underground.works/blog/clockwork-4.1-released-with-commands-queue-jobs-tests-profiling-and-more'
 		}
 	}

@@ -17,7 +17,7 @@
 					<tr v-for="item in items">
 						<td v-for="item in item">
 							<pretty-print :data="item.value" v-if="typeof item.value != 'string'"></pretty-print>
-							<shortened-text :full="item.value" v-if="typeof item.value == 'string'">{{ item.value.length > 40 ? item.value.substring(0,40) + ' [...]' : item.value}}</shortened-text>
+							<shortened-text :full="item.value" v-if="typeof item.value == 'string'">{{ item.value.length > 500 ? item.value.substring(0, 500) + ' [...]' : item.value}}</shortened-text>
 						</td>
 					</tr>
 				</template>

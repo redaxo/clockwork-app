@@ -23,13 +23,13 @@
 		<performance-log></performance-log>
 
 		<div tabs="performance">
-			<div class="performance-tabs">
-				<a class="performance-tab" :class="{ 'active': isTabActive('timeline') }" href="#" @click.prevent="showTab('timeline')">Timeline</a>
-				<a class="performance-tab" :class="{ 'active': isTabActive('profiler') }" href="#" @click.prevent="showTab('profiler')">Profiler</a>
-			</div>
+<!--			<div class="performance-tabs">-->
+<!--				<a class="performance-tab" :class="{ 'active': isTabActive('timeline') }" href="#" @click.prevent="showTab('timeline')">Timeline</a>-->
+<!--				<a class="performance-tab" :class="{ 'active': isTabActive('profiler') }" href="#" @click.prevent="showTab('profiler')">Profiler</a>-->
+<!--			</div>-->
 
 			<timeline name="performance" :items="$request.timeline" :tags="timelineTags" v-show="isTabActive('timeline')"></timeline>
-			<profiler v-show="isTabActive('profiler')"></profiler>
+<!--			<profiler v-show="isTabActive('profiler')"></profiler>-->
 		</div>
 	</div>
 </template>

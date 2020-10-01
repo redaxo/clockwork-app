@@ -1,3 +1,46 @@
+### Adjusted for REDAXO CMS needs
+
+#### Lokal entwickeln
+
+1. klonen
+2. `.env.local` anlegen und auf eigene Umgebung anpassen
+   ```dotenv
+    VUE_APP_STANDALONE_REMOTE_HOST=http://exmaple.org/my-subpath-to-redaxo-root/redaxo/index.php?page=debug
+    VUE_APP_STANDALONE_REMOTE_PATH=/my-subpath-to-redaxo-root/redaxo/index.php?page=structure&rex-api-call=debug&request=
+    ```
+3. `vue.config.local.js` anlegen und den Host der REDAXO Installation angeben
+    ```js
+    module.exports = {
+        "devServer": {
+            "proxy": 'http://example.org'
+        }
+    }
+    ```
+4. `yarn` oder `npm install` ausführen
+5. `yarn serve` oder `npm run serve` ausführen
+
+#### Frontend ins REDAXO Repo übernehmen
+
+Die Änderungen müssen im branch `redaxo` (dieses Repo) verfügbar sein.
+
+```bash
+$ cd redaxo/src/addons/debug/fronted/
+$ ./build.sh
+```
+(Wichtig: das Skript `build.sh` nicht außerhalb des `frontend` Ordners ausführen, da sonst die Pfadangaben nicht passen)
+
+Um das neu kompilierte Frontend auszuprobieren einmal das Debug-AddOn reinstallieren, damit die Assets in den `/assets` Ordner kopiert werden.
+
+
+### Changelog für Redaxo spezifische Änderungen
+
+#### v5.11
+- "bullhorn toggle" in performance tab entfernt - closes #3524
+- workaround zum Verstecken der "unformatierten" Whats-new Anzeige entfernt und die Anzeige komplett deaktiviert
+- im "Extension Point"-Tab werden die Ausgaben z.B. subject gekürzt dargestellt. Beim Klick wird der komplette Inhalt angezeigt. Zeigt besonders Wirkung bei `OUTPUT_FILTER`
+
+---
+
 <p align="center">
 	<img width="300px" src="https://github.com/underground-works/clockwork-app/raw/master/.github/assets/title.png">
 	<img width="100%" src="https://github.com/underground-works/clockwork-app/raw/master/.github/assets/screenshot.png">

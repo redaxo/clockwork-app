@@ -3,8 +3,6 @@
 		<requests-list v-show="showRequestsList"></requests-list>
 		<request-details></request-details>
 		<request-sidebar v-show="showRequestSidebar"></request-sidebar>
-
-		<whats-new></whats-new>
 	</div>
 </template>
 
@@ -12,11 +10,10 @@
 import RequestDetails from './components/RequestDetails'
 import RequestSidebar from './components/RequestSidebar'
 import RequestsList from './components/RequestsList'
-import WhatsNew from './components/Details/WhatsNew'
 
 export default {
 	name: 'App',
-	components: { RequestDetails, RequestSidebar, RequestsList, WhatsNew },
+	components: { RequestDetails, RequestSidebar, RequestsList },
 	computed: {
 		appearance() { return this.$settings.appearance },
 		showRequestsList() { return ! this.$settings.global.requestsListCollapsed && this.$platform.hasFeature('requests-list') },

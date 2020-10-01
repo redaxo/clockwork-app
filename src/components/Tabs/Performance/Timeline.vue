@@ -137,7 +137,7 @@ export default {
 		condense: true,
 		showDetails: false,
 
-		hiddenTags: [],
+		hiddenTags: ['events'],
 		presentedEvents: [],
 
 		filter: new Filter([

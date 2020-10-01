@@ -1,4 +1,5 @@
-module.exports = {
+const {existsSync} = require('fs');
+const vue = {
 	publicPath: "./",
 	outputDir: "build",
 	configureWebpack: {
@@ -13,4 +14,9 @@ module.exports = {
 			.loader('vue-svg-loader')
 			.options({ svgo: { plugins: [{ removeDimensions: true }, { removeViewBox: false }] } })
 	}
+}
+
+module.exports = {
+	...vue,
+	...existsSync('./vue.config.local.js') ? require('./vue.config.local.js') : {}
 }

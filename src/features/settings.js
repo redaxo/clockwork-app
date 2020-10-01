@@ -85,7 +85,7 @@ export default class Settings
 				seenReleaseNotesVersion: null,
 				shareTermsAccepted: false,
 				timelineCondensed: { performance: true, views: false },
-				timelineHiddenTags: {},
+				timelineHiddenTags: {performance:["events"]},
 				viewsTimelineCondensed: false
 			},
 			site: {

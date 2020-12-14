@@ -37,7 +37,7 @@ export default class Standalone
 
 		this.requests.setRemote(
 			window.location.href,
-			{ path: (new URI(window.location.href)).path().split('/').slice(0, -2).join('/') + '/index.php?page=structure\&rex-api-call=debug\&request=' }
+			{ path: (new URI(window.location.href)).path().split('/').slice(0, -2).join('/') + '/redaxo/index.php?page=structure\&rex-api-call=debug\&request=' }
 		)
 	}
 

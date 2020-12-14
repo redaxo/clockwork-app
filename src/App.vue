@@ -3,8 +3,6 @@
 		<requests-list v-show="showRequestsList"></requests-list>
 		<request-details></request-details>
 		<request-sidebar v-show="showRequestSidebar"></request-sidebar>
-
-		<whats-new></whats-new>
 	</div>
 </template>
 
